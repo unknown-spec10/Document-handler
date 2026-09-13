@@ -137,9 +137,24 @@ def calculate_sha256_and_size(filepath: str) -> tuple[str, int]:
 
 async def execute_pg_dump(output_filepath: str) -> None:
     """
-    Executes pg_dump via docker exec on container dms-postgres in custom format (-F c).
-    Streams stdout directly to output_filepath.
+    Executes pg_dump in custom format (-F c).
+    Prefers the local pg_dump binary connecting over the Docker network via DATABASE_URL,
+    falling back to docker exec if running externally on a host.
     """
+    if shutil.which("pg_dump"):
+        clean_url = (config.DATABASE_URL or "").replace("postgresql+asyncpg://", "postgresql://")
+        cmd = ["pg_dump", "-d", clean_url, "-F", "c", "-f", output_filepath]
+        proc = await asyncio.create_subprocess_exec(
+            *cmd,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE
+        )
+        _, stderr = await proc.communicate()
+        if proc.returncode != 0:
+            err_msg = stderr.decode(errors="replace").strip() if stderr else "Unknown error"
+            raise RuntimeError(f"pg_dump failed with exit code {proc.returncode}: {err_msg}")
+        return
+
     cmd = [
         "docker", "exec", "dms-postgres",
         "pg_dump", "-U", "postgres", "-d", "postgres", "-F", "c"

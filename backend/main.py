@@ -52,7 +52,11 @@ async def verify_local_origin(request: Request, call_next):
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from backend.backup import run_automated_backup, close_backup_s3_client, get_runtime_setting
-from backend import config
+from backend import config, models
+from backend.db import engine, Base, AsyncSessionLocal
+from sqlalchemy import select
+from datetime import datetime, timezone, timedelta
+import asyncio
 
 # Initialize AsyncIOScheduler
 scheduler = AsyncIOScheduler(timezone="UTC")
@@ -101,6 +105,43 @@ async def startup_event():
         print(f"[Scheduler] Background scheduler started successfully (Backup scheduled at {int(hour):02d}:{int(minute):02d} UTC).")
     except Exception as e:
         print(f"[Scheduler] Failed to start APScheduler: {e}")
+
+    # 4. Check for Missed / Catch-up Daily Backup
+    async def check_and_run_catchup_backup():
+        await asyncio.sleep(5)  # Allow DB and network pool to settle
+        try:
+            async with AsyncSessionLocal() as db:
+                stmt = select(models.StorageLog).where(
+                    models.StorageLog.operation == "BACKUP_SNAPSHOT",
+                    models.StorageLog.status == "SUCCESS"
+                ).order_by(models.StorageLog.timestamp.desc()).limit(1)
+                result = await db.execute(stmt)
+                latest_backup = result.scalar_one_or_none()
+
+                needs_backup = False
+                reason = ""
+                if not latest_backup:
+                    needs_backup = True
+                    reason = "No prior backup snapshot found in database"
+                else:
+                    last_time = latest_backup.timestamp
+                    if last_time.tzinfo is None:
+                        last_time = last_time.replace(tzinfo=timezone.utc)
+                    age = datetime.now(timezone.utc) - last_time
+                    if age > timedelta(hours=20):
+                        needs_backup = True
+                        reason = f"Last backup was {age.total_seconds() / 3600:.1f} hours ago (>20h threshold)"
+
+                if needs_backup:
+                    print(f"[Backup] Catch-up backup triggered ({reason}). Starting background backup...")
+                    await run_automated_backup(triggered_by="system:startup_catchup")
+                    print("[Backup] Catch-up backup completed successfully.")
+                else:
+                    print("[Backup] Recent backup exists. Catch-up backup not required on startup.")
+        except Exception as e:
+            print(f"[Backup] Startup catch-up backup check encountered an error: {e}")
+
+    asyncio.create_task(check_and_run_catchup_backup())
 
 @app.on_event("shutdown")
 async def shutdown_event():
