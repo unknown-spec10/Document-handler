@@ -453,7 +453,10 @@ export default function AdminUserDetail() {
         <div className="flex items-center gap-4 min-w-0">
           <div className="flex items-center gap-2 shrink-0">
             <Shield className="w-4 h-4 text-blue-500" />
-            <span className={`font-semibold text-sm uppercase tracking-wide hidden sm:block ${isDark ? 'text-white' : 'text-slate-800'}`}>Policy Manager</span>
+            <div className="hidden sm:flex flex-col leading-tight">
+              <span className={`font-bold text-xs uppercase tracking-wider ${isDark ? 'text-white' : 'text-slate-800'}`}>Policy Manager</span>
+              <span className="text-[9px] text-slate-400 font-medium tracking-normal">Document Vault</span>
+            </div>
           </div>
           <div className={`h-4 w-px hidden sm:block ${isDark ? 'bg-slate-700' : 'bg-slate-300'}`} />
           <button

@@ -684,11 +684,12 @@ export default function AdminDashboard() {
         >
           {/* Brand */}
           <div className="flex flex-col items-center mb-8 text-center">
-            <div className="w-12 h-12 bg-blue-600/10 border border-blue-600/30 rounded-xl flex items-center justify-center text-blue-400 mb-4">
+            <div className="w-12 h-12 bg-blue-600/10 border border-blue-600/30 rounded-xl flex items-center justify-center text-blue-400 mb-4 shadow-lg shadow-blue-950/40">
               <Shield className="w-6 h-6" />
             </div>
-            <h1 className="text-xl font-semibold text-white uppercase tracking-wide">Policy Manager</h1>
-            <p className="mt-1 text-xs text-slate-500">Admin Console · Authenticate to continue</p>
+            <h1 className="text-xl font-bold text-white uppercase tracking-wider">Policy Manager</h1>
+            <p className="mt-1 text-xs text-blue-400 font-medium">Enterprise Insurance & KYC Repository</p>
+            <p className="mt-0.5 text-[11px] text-slate-500">Secure Administrative Console · Authenticate to continue</p>
           </div>
 
           {/* Card */}
@@ -786,10 +787,15 @@ export default function AdminDashboard() {
           {/* Brand */}
           <div className={`h-14 flex items-center border-b border-slate-800 bg-slate-950 transition-all duration-300 ${sidebarCollapsed ? 'px-0 justify-center' : 'px-5 justify-between'}`}>
             {!sidebarCollapsed && (
-              <span className="text-white font-semibold tracking-wide text-sm flex items-center gap-2 uppercase truncate">
-                <Shield className="w-4 h-4 text-blue-500 shrink-0" />
-                Policy Manager
-              </span>
+              <div className="flex flex-col min-w-0 pr-2">
+                <span className="text-white font-bold tracking-wider text-sm flex items-center gap-2 uppercase truncate">
+                  <Shield className="w-4 h-4 text-blue-500 shrink-0" />
+                  Policy Manager
+                </span>
+                <span className="text-[10px] text-slate-400 font-medium tracking-normal truncate pl-6">
+                  Enterprise Document Vault
+                </span>
+              </div>
             )}
             <button
               onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
