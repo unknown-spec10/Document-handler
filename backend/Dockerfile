@@ -45,5 +45,5 @@ COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 # Expose unified application port (API + Frontend UI)
 EXPOSE 8000
 
-# Auto-migrate database on container boot and launch Uvicorn
-CMD ["sh", "-c", "alembic upgrade head && uvicorn backend.main:app --host 0.0.0.0 --port 8000"]
+# Auto-migrate database on container boot and launch Uvicorn with exec for graceful signal forwarding
+CMD ["sh", "-c", "alembic upgrade head && exec uvicorn backend.main:app --host 0.0.0.0 --port 8000"]

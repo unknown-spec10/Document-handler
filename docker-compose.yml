@@ -30,12 +30,11 @@ services:
       retries: 10
 
   backend:
-    build:
-      context: .
-      dockerfile: backend/Dockerfile
     image: deepdocker2023/dms-backend:latest
     container_name: dms-backend
     restart: unless-stopped
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     env_file: .env
     environment:
       DATABASE_URL: postgresql://postgres:root@db:5432/postgres
@@ -58,8 +57,9 @@ services:
       - DOCKER_API_VERSION=1.45
       - WATCHTOWER_HTTP_API_UPDATE=true
       - WATCHTOWER_HTTP_API_TOKEN=dms_secure_update_token_123
+      - WATCHTOWER_LABEL_ENABLE=true
       - WATCHTOWER_CLEANUP=true
-      - WATCHTOWER_TIMEOUT=120s
+      - WATCHTOWER_TIMEOUT=15s
 
 volumes:
   pgdata:

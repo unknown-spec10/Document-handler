@@ -167,7 +167,7 @@ async def shutdown_event():
 
 @app.get("/api/health", tags=["health"])
 async def health_check():
-    return {"status": "healthy", "service": "document-management-system-api"}
+    return {"status": "healthy", "service": "document-management-system-api", "version": "1.0.2"}
 
 # Static Frontend SPA Serving (No Nginx required)
 import os
