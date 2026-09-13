@@ -1,3 +1,5 @@
+name: dms
+
 services:
   db:
     image: postgres:15-alpine
@@ -48,18 +50,50 @@ services:
         condition: service_healthy
 
   updater:
-    image: containrrr/watchtower
+    image: docker:cli
     container_name: dms-updater
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - DOCKER_API_VERSION=1.45
-      - WATCHTOWER_HTTP_API_UPDATE=true
-      - WATCHTOWER_HTTP_API_TOKEN=dms_secure_update_token_123
-      - WATCHTOWER_LABEL_ENABLE=true
-      - WATCHTOWER_CLEANUP=true
-      - WATCHTOWER_TIMEOUT=15s
+      - .:/app
+    working_dir: /app
+    entrypoint:
+      - sh
+      - -c
+      - |
+        apk add --no-cache python3 > /dev/null 2>&1
+        exec python3 -u -c '
+        import http.server, subprocess, sys
+
+        class UpdateHandler(http.server.BaseHTTPRequestHandler):
+            def do_POST(self):
+                if self.path == "/v1/update":
+                    auth = self.headers.get("Authorization", "")
+                    if auth != "Bearer dms_secure_update_token_123":
+                        self.send_response(401)
+                        self.end_headers()
+                        return
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/json")
+                    self.end_headers()
+                    self.wfile.write(b"{\"status\":\"update_in_progress\"}")
+                    print("[Updater] Step 1/2: Pulling latest image from Docker Hub...", flush=True)
+                    subprocess.run(["docker", "pull", "deepdocker2023/dms-backend:latest"])
+                    print("[Updater] Step 2/2: Recreating backend container...", flush=True)
+                    subprocess.run(["docker", "compose", "up", "-d", "--no-deps", "backend"])
+                    print("[Updater] Update finished successfully!", flush=True)
+                else:
+                    self.send_response(404)
+                    self.end_headers()
+
+            def log_message(self, format, *args):
+                print(f"[Updater HTTP] {args[0]} - {args[1]}", flush=True)
+
+        server = http.server.HTTPServer(("0.0.0.0", 8080), UpdateHandler)
+        print("[Updater] Dedicated DMS Updater service active on port 8080", flush=True)
+        server.serve_forever()
+        '
 
 volumes:
   pgdata:
+
