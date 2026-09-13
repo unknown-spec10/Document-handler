@@ -6,25 +6,28 @@ This operational document outlines the technical mechanisms for automated databa
 
 ## 🕒 Automated Snapshot Pipeline (`backend/backup.py`)
 
-The automated backup job runs daily at **02:00 AM UTC** (or the schedule configured in **Settings & Backup**):
+The automated backup job runs daily at **02:00 AM UTC** via APScheduler, and also features **Automated Startup Catch-Up**:
+
+* **Catch-Up on Boot**: When running on a non-24/7 machine (e.g. user's laptop that was powered off or asleep overnight), FastAPI evaluates `storage_logs` 5 seconds after startup.
+* If the latest successful snapshot is older than **20 hours** (or no backup exists), an asynchronous background snapshot triggers automatically without delaying UI availability.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant Sched as APScheduler
+    participant Trigger as APScheduler (02:00 UTC) / Startup Worker
     participant Pre as Safety Pre-Checks
-    participant Docker as PostgreSQL (Docker)
+    participant Docker as PostgreSQL (Container)
     participant Temp as Local Temp File
     participant S3 as AWS S3 Bucket
     participant DB as System Alerts / Storage Logs
 
-    Sched->>Pre: Trigger daily snapshot job
+    Trigger->>Pre: Trigger snapshot job (APScheduler or startup catch-up)
     Pre->>Pre: check_disk_space(".") (< 85%)
     alt Disk Space > 85%
         Pre->>DB: Log CRITICAL alert to system_alerts
-        Pre-->>Sched: Abort snapshot
+        Pre-->>Trigger: Abort snapshot
     else Disk Space OK
-        Pre->>Docker: docker exec dms-postgres pg_dump -U postgres -d postgres -F c
+        Pre->>Docker: pg_dump -d DATABASE_URL -F c (native container execution)
         Docker->>Temp: Stream custom binary dump
         Temp->>Temp: Compute SHA-256 hash & byte length
         Temp->>S3: Upload with SSE + S3 Object Lock (COMPLIANCE)
@@ -54,12 +57,13 @@ sequenceDiagram
 ## 🛡️ Operational Safety Pre-Checks
 
 * **Host Disk Space Check (`shutil.disk_usage`)**:
-  * Before generating any database dump, the host disk usage is calculated.
+  * Before generating any database dump, host disk usage is calculated.
   * If usage exceeds `disk_space_threshold_percent` (default **85%**), the backup aborts immediately to protect host system stability and registers a persistent alert in `system_alerts`.
-* **Zero Host Toolchain Dependency**:
-  * Dumps are produced inside the container using `docker exec dms-postgres pg_dump` and streamed directly to temporary storage. Windows host machines do not require PostgreSQL binaries installed.
+* **Container-Native `pg_dump` Execution**:
+  * The backup pipeline utilizes the `pg_dump` binary installed directly inside the backend container, connecting across the internal bridge network (`postgresql://postgres:root@db:5432/postgres`).
+  * If running on a host without internal network DNS, it falls back to `docker exec dms-postgres pg_dump`. No PostgreSQL tools are required on the host Windows machine.
 * **Leak-Proof Unlinking**:
-  * Temporary `.dump` files are managed via `tempfile.NamedTemporaryFile` and unlinked in a mandatory `finally` block, ensuring no temporary files leak onto the host disk even on unhandled exceptions.
+  * Temporary `.dump` files are managed via `tempfile.NamedTemporaryFile` and unlinked in a mandatory `finally` block, ensuring no temporary files leak onto the disk even on unhandled exceptions.
 
 ---
 

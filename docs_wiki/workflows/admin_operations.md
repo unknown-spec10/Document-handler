@@ -7,8 +7,9 @@ This document describes the primary administrative workflows for managing users,
 ## 👤 User & Policy Creation Workflow
 
 1. **Authentication**:
-   * Admin navigates to `/admin` and logs in using credentials defined in `.env`.
-   * FastAPI issues an `access_token` stored as an `httpOnly` secure cookie.
+   * Admin navigates to `/` (or `http://localhost:8000/`) and logs in using credentials defined in `.env` (`ADMIN_USERNAME` / `ADMIN_PASSWORD`).
+   * FastAPI issues a dynamic 32-byte in-memory cryptographic session token stored in an `httpOnly` secure cookie (`admin_session` and `access_token`).
+   * No JWTs are used; tokens are validated against an in-memory session store for zero-exposure security.
 2. **User Registration**:
    * Admin clicks **Add User** in the dashboard header.
    * Required fields:
@@ -16,6 +17,27 @@ This document describes the primary administrative workflows for managing users,
      * **Phone Number**: Mandatory 10-digit Indian phone number (`^[6-9]\d{9}$`).
      * **Owner Name**: 2-100 characters.
      * **Email Address**: Valid email format.
+
+---
+
+## 🔄 In-App System Update Workflow
+
+Administrators can pull the latest production releases from Docker Hub directly within the web UI without terminal access:
+
+1. **Triggering Update**:
+   * Admin clicks **"Update App"** in the top navigation bar.
+   * A confirmation modal explains that the application will briefly restart while PostgreSQL database data is completely preserved.
+2. **Execution & UI Freeze**:
+   * Clicking **Confirm Update** dispatches `POST /api/admin/system/update`.
+   * The UI immediately enters an **interactive freeze state** displaying an animated spinner and elapsed timer, preventing user inputs during rotation.
+3. **Companion Updater (`dms-updater`) Execution**:
+   * FastAPI notifies the internal companion service at `http://updater:8080/v1/update`.
+   * `dms-updater` runs `docker pull deepdocker2023/dms-backend:latest` and `docker compose up -d --no-deps backend`.
+   * Only `dms-backend` is rotated. PostgreSQL and Redis remain running continuously.
+4. **Health Polling & Automatic Resume**:
+   * The frontend polls `GET /api/health` every 2.5 seconds.
+   * Once the newly rotated container returns `{"status": "healthy"}`, the modal displays success and automatically reloads the page.
+   * Typical downtime: **~8 to 12 seconds**.
 
 ---
 

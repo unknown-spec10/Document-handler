@@ -1,13 +1,17 @@
 {
-  "updatedAt": "2026-09-12T13:29:53.568457Z",
+  "updatedAt": "2026-09-13T16:54:19.684581Z",
   "files": {
     "alembic.ini": {
       "hash": "539da21b129dc453573e979516cb954d662367afcee107b75e695540d873f54d",
       "mtime": 1781464835.084571
     },
+    "create_shortcut.bat": {
+      "hash": "49a2bf1a40512dbfe03acf88e1989e02b67b5670ed0bb97bccd64add57ae30f0",
+      "mtime": 1789313297.4365647
+    },
     "docker-compose.yml": {
-      "hash": "b1b886000d2d000497c1553daf42f708c9dc4d1674a3229df7530695247a43b7",
-      "mtime": 1789211383.704463
+      "hash": "aeca4dde1ec34e1118938b3f4b5f0675ed37f5fa2cbb86d1417cb59d4f47cdc3",
+      "mtime": 1789318104.7604084
     },
     "gemini-code-1782161589814.html": {
       "hash": "944ee2909f9580449d1dbe72fc614951cefc97f17bc57dc1d8b7cdbf317a342b",
@@ -16,6 +20,10 @@
     "gemini-code-1782162110758.html": {
       "hash": "ff3e79af0127e17b9d3473ad4ea937b99f64b2afd567249853fab8715429b452",
       "mtime": 1782162112.729564
+    },
+    "launch_app.bat": {
+      "hash": "0e64f8a2ca7fbe57d6bacd39460c0d23f35c59b3a352d84aa1dd1a7ba99c0725",
+      "mtime": 1789313293.2586057
     },
     "node_backup.exe": {
       "hash": "b7d912484d42e7a0d0cb5b26a86410ec973a79ece7d61ad535e2d1a97a9026e1",
@@ -34,48 +42,48 @@
       "mtime": 1789218937.9584029
     },
     "start.bat": {
-      "hash": "5492ddf0bad212101b0db721c10b738a96b5bd29d834bb5d5d30d8d7d969e380",
-      "mtime": 1789219444.7359922
+      "hash": "94e7f456ef0f3ab91fb80438c0070e09743802092e08038db3121722c5900866",
+      "mtime": 1789299582.6442573
     },
     "stop.bat": {
       "hash": "9cf14417ca91fbb7122450f3fe38e0518429df4aa73607bf16b1e232fae196cb",
       "mtime": 1789207089.420366
     },
     ".agents\\AGENTS.md": {
-      "hash": "19d44ad92b1718ca7b61c3b304e4fb959b40a7e26cefb09032f94bcb5c4274f8",
-      "mtime": 1783539367.2551758
+      "hash": "7f9d7c069384c27e88112e02cbedba83b08ff896196a9d0cf988029f95f06717",
+      "mtime": 1789219802.2941566
     },
     "backend\\auth.py": {
-      "hash": "5ab224c51882aedf79ef57256417d091146226a10646b3be1047a8cfc1378388",
-      "mtime": 1783363466.0320365
+      "hash": "c4dd67678fb50f9d24dcf0e1db7771973ab7715310a8a64ac8ff9680e614a704",
+      "mtime": 1789307333.9944353
     },
     "backend\\backup.py": {
-      "hash": "a4a638ebead00d53327ea443de21a5a7e86fbd68fb4299622f18b7fa92d4dade",
-      "mtime": 1789218658.3500195
+      "hash": "52d80a1ca522b0271232cdd74552c8a35d53414ced1b672b3c9b017aaf8eb1d8",
+      "mtime": 1789316665.1339486
     },
     "backend\\cache.py": {
       "hash": "c3e1d9a03d784e4e0fbce6186873c0ae9f4cd54a8b112aee50b7feb2fb5042c0",
       "mtime": 1783782775.8565104
     },
     "backend\\config.py": {
-      "hash": "3e244b3cf50f5050814094be3b18f7be1323aa911a7ff0552021f0af26a15f90",
-      "mtime": 1789219272.0366113
+      "hash": "756dbf7995048f5282a3b51c788c3befd594fc961854eed26f255cbfc45d2f6b",
+      "mtime": 1789304939.529377
     },
     "backend\\db.py": {
       "hash": "7f7118fb6574de9dd4d2227061d66ce9b6f258c09271c89b5e68c3b3ff29b325",
       "mtime": 1781525896.972621
     },
     "backend\\dependencies.py": {
-      "hash": "a9a858cddb7d5dafa5b05342d0e6c993f8dd757054e9b82649903a87c9c983d1",
-      "mtime": 1789219347.5077536
+      "hash": "7edd9322e07ce1a0939e64c48731f4f2608eca68e555fdaa8f83f442050c5b46",
+      "mtime": 1789304954.1571517
     },
     "backend\\Dockerfile": {
-      "hash": "ebf1cc5824b18e1a9cbeb5b5f8c2241489109b61d407abd04bdd0b26931eba49",
-      "mtime": 1781477139.64844
+      "hash": "d21598f0cb0e0214e6a24af3a2dcea488ba08e6ad9fc3eeae0f0f8adf9507d16",
+      "mtime": 1789317709.0046966
     },
     "backend\\main.py": {
-      "hash": "8a98cb53feb693ff31272cfd4b53737ad2fc98fd29a08477e7d95ce3f1a4c1e8",
-      "mtime": 1789219289.2678933
+      "hash": "e3a8d9bb19f2f2412a2a60463cf06cc4bcf13eee255510ce5876b8b10980e863",
+      "mtime": 1789318137.0319004
     },
     "backend\\models.py": {
       "hash": "a458515f1f07568b92581d93e84e8c135906dcba9878659d56d00f0ac49a315c",
@@ -90,8 +98,8 @@
       "mtime": 1783783550.9574656
     },
     "backend\\requirements.txt": {
-      "hash": "fbe33030e7cd35c6675fd2fafda05625025f4cc74009eeecffe22ec548d6c3c8",
-      "mtime": 1789218572.0900311
+      "hash": "0ced79da9b713771437c84f58a0daf74610542b1e0524dc444b9b4873857e269",
+      "mtime": 1789304930.4169312
     },
     "backend\\s3.py": {
       "hash": "566a56af3dd52ec0baf95f488ea8cedbfdd5c8e5d992c35122de90c13ffedf1b",
@@ -162,20 +170,20 @@
       "mtime": 1781906335.9507473
     },
     "backend\\routes\\admin.py": {
-      "hash": "37bb2e12f3f5fa32ded0d1695ababa67839a12f1ffacf836e47cbc351ecad400",
-      "mtime": 1789218773.012251
+      "hash": "f6f91cbca33a1a260d3b5032f03893170f23264bcf1696c013f56aa662a95ce1",
+      "mtime": 1789313151.040798
     },
     "backend\\routes\\auth.py": {
-      "hash": "e5da3b76fe388822435e0c9093e1809fe95d8d873904c211fce220ec7e696f39",
-      "mtime": 1789219252.0307817
+      "hash": "64519211974d6854edbeb3215d99ebd65162e6295588c3c52b86afd7df053ee4",
+      "mtime": 1789307342.0354187
     },
     "backend\\routes\\users.py": {
       "hash": "14b037c36cfbb8b55ea1730c096cd306be8215853db9550b9b5dfcbc7e755cf4",
       "mtime": 1783781375.5168176
     },
     "frontend\\Dockerfile": {
-      "hash": "135fa78125621b13aca2a75a841118e104ff4a5ed6cdf2e8518ea3fcf5071635",
-      "mtime": 1781477152.4919212
+      "hash": "f1133296b81486b285a38f935eff4c58cd7fd3157304b995ec114d2938937034",
+      "mtime": 1789220076.5045443
     },
     "frontend\\eslint.config.js": {
       "hash": "bdc96e9bee1d09bfd1f4eddec02b64011f49df4b208412f41e4cc76eb0209e72",
@@ -186,8 +194,8 @@
       "mtime": 1782163405.9311707
     },
     "frontend\\nginx.conf": {
-      "hash": "854bf2ce01e0f088ae5ee45e51f24a93b106681f9bf84d962d3893f522252859",
-      "mtime": 1781907059.1841383
+      "hash": "36d30c25778cfc4d789f82cfc1f812fa59a9a0bbea8507029e16995596f3c36f",
+      "mtime": 1789299541.1663864
     },
     "frontend\\package.json": {
       "hash": "b7f6c0c1ecd8783c27d98625d9048355b8709910d19bd0d452f1ea47b952ed60",
@@ -245,13 +253,17 @@
       "hash": "5985a0e95d4356da34c57912d7b1bbc100e86ae630eb4cb5cf9727646a273585",
       "mtime": 1782213234.696792
     },
+    "frontend\\src\\components\\NotificationCenter.jsx": {
+      "hash": "34cadffd8bcfe68dda816932e9e8a0e9be6ee8ec93ef65dc8de0347b8c613e5d",
+      "mtime": 1789226631.3171844
+    },
     "frontend\\src\\pages\\AdminDashboard.jsx": {
-      "hash": "a1c5bdd855fe8d3f93b581dc5d8f3a728bde87a318a3e71766bef6b476e415f4",
-      "mtime": 1789218915.993721
+      "hash": "c78f2b11dd719f69f6dbf657f55f5b61bc158c88eb6f8b4f24ae15b21ad0d2ad",
+      "mtime": 1789313212.3781247
     },
     "frontend\\src\\pages\\AdminUserDetail.jsx": {
-      "hash": "3d3e45f864ae34a33d931baa9da29a128a1a9e3724de6eeac4e5cd59b0b21cc0",
-      "mtime": 1783782737.9698908
+      "hash": "688300178fc8b6936c5cff7bc447114920baf21b687906375745f37d04ffe802",
+      "mtime": 1789227650.4588976
     },
     "frontend\\src\\utils\\policyUtils.js": {
       "hash": "384d5b9d7ae462fa4146feef4b1b9ac11cec0aa5c0fdb646f6f3e0b2d14ea6c6",
