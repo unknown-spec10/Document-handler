@@ -1,0 +1,345 @@
+{
+  "updatedAt": "2026-09-12T13:29:53.568457Z",
+  "files": {
+    "alembic.ini": {
+      "hash": "539da21b129dc453573e979516cb954d662367afcee107b75e695540d873f54d",
+      "mtime": 1781464835.084571
+    },
+    "docker-compose.yml": {
+      "hash": "b1b886000d2d000497c1553daf42f708c9dc4d1674a3229df7530695247a43b7",
+      "mtime": 1789211383.704463
+    },
+    "gemini-code-1782161589814.html": {
+      "hash": "944ee2909f9580449d1dbe72fc614951cefc97f17bc57dc1d8b7cdbf317a342b",
+      "mtime": 1782161592.605087
+    },
+    "gemini-code-1782162110758.html": {
+      "hash": "ff3e79af0127e17b9d3473ad4ea937b99f64b2afd567249853fab8715429b452",
+      "mtime": 1782162112.729564
+    },
+    "node_backup.exe": {
+      "hash": "b7d912484d42e7a0d0cb5b26a86410ec973a79ece7d61ad535e2d1a97a9026e1",
+      "mtime": 1761596280.0
+    },
+    "nul^": {
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime": 1789204685.4409027
+    },
+    "README.md": {
+      "hash": "148479155ddecb9e3ca66dcfea1baf0682ebe0bfb6cf835b42686deb2429ca30",
+      "mtime": 1781549536.5325181
+    },
+    "RECOVERY.md": {
+      "hash": "5959b558148de1c248de9cf983665c99464bba97d51b7ecb88ff0732041e53ba",
+      "mtime": 1789218937.9584029
+    },
+    "start.bat": {
+      "hash": "5492ddf0bad212101b0db721c10b738a96b5bd29d834bb5d5d30d8d7d969e380",
+      "mtime": 1789219444.7359922
+    },
+    "stop.bat": {
+      "hash": "9cf14417ca91fbb7122450f3fe38e0518429df4aa73607bf16b1e232fae196cb",
+      "mtime": 1789207089.420366
+    },
+    ".agents\\AGENTS.md": {
+      "hash": "19d44ad92b1718ca7b61c3b304e4fb959b40a7e26cefb09032f94bcb5c4274f8",
+      "mtime": 1783539367.2551758
+    },
+    "backend\\auth.py": {
+      "hash": "5ab224c51882aedf79ef57256417d091146226a10646b3be1047a8cfc1378388",
+      "mtime": 1783363466.0320365
+    },
+    "backend\\backup.py": {
+      "hash": "a4a638ebead00d53327ea443de21a5a7e86fbd68fb4299622f18b7fa92d4dade",
+      "mtime": 1789218658.3500195
+    },
+    "backend\\cache.py": {
+      "hash": "c3e1d9a03d784e4e0fbce6186873c0ae9f4cd54a8b112aee50b7feb2fb5042c0",
+      "mtime": 1783782775.8565104
+    },
+    "backend\\config.py": {
+      "hash": "3e244b3cf50f5050814094be3b18f7be1323aa911a7ff0552021f0af26a15f90",
+      "mtime": 1789219272.0366113
+    },
+    "backend\\db.py": {
+      "hash": "7f7118fb6574de9dd4d2227061d66ce9b6f258c09271c89b5e68c3b3ff29b325",
+      "mtime": 1781525896.972621
+    },
+    "backend\\dependencies.py": {
+      "hash": "a9a858cddb7d5dafa5b05342d0e6c993f8dd757054e9b82649903a87c9c983d1",
+      "mtime": 1789219347.5077536
+    },
+    "backend\\Dockerfile": {
+      "hash": "ebf1cc5824b18e1a9cbeb5b5f8c2241489109b61d407abd04bdd0b26931eba49",
+      "mtime": 1781477139.64844
+    },
+    "backend\\main.py": {
+      "hash": "8a98cb53feb693ff31272cfd4b53737ad2fc98fd29a08477e7d95ce3f1a4c1e8",
+      "mtime": 1789219289.2678933
+    },
+    "backend\\models.py": {
+      "hash": "a458515f1f07568b92581d93e84e8c135906dcba9878659d56d00f0ac49a315c",
+      "mtime": 1789219257.6486652
+    },
+    "backend\\pricing.py": {
+      "hash": "50a4c90c7fb1d7224d6a21f9734bc24416067d6c08a007a6d84c11dc24aafe42",
+      "mtime": 1781895310.466365
+    },
+    "backend\\pricing_cache.json": {
+      "hash": "b9427a9bade7e145a0b94bf741c9ef0e969a98bd57eacbcf0a5b18a1c221982d",
+      "mtime": 1783783550.9574656
+    },
+    "backend\\requirements.txt": {
+      "hash": "fbe33030e7cd35c6675fd2fafda05625025f4cc74009eeecffe22ec548d6c3c8",
+      "mtime": 1789218572.0900311
+    },
+    "backend\\s3.py": {
+      "hash": "566a56af3dd52ec0baf95f488ea8cedbfdd5c8e5d992c35122de90c13ffedf1b",
+      "mtime": 1782217962.5267727
+    },
+    "backend\\schemas.py": {
+      "hash": "1cf58258328c93d0b67ce1e32339a20a24584429871149d4e640478c61d3402e",
+      "mtime": 1789219263.8564787
+    },
+    "backend\\test_backup_system.py": {
+      "hash": "864de6d9a8e4d1933d198296f7f21b352ec524fc130be0d944f141b614e093f4",
+      "mtime": 1789218944.7551138
+    },
+    "backend\\test_policy_handler.py": {
+      "hash": "451b77be949193735ce78107ea7955e0d32fee24de193614c64e178a11560442",
+      "mtime": 1783534560.267983
+    },
+    "backend\\test_pricing.py": {
+      "hash": "b82867602933d94c0dd6760829988895457c4af7ffec137997661b9ee18066c6",
+      "mtime": 1781895377.6762676
+    },
+    "backend\\alembic\\env.py": {
+      "hash": "d42faad75a92bb8e24a9d122e6d0932dcdb57a12e2082394de5a52ef52e3e9fb",
+      "mtime": 1781464851.6405306
+    },
+    "backend\\alembic\\README": {
+      "hash": "31595cf53626af9ed16e15c44fa43183209cc163fbc3ebcb904b22ac436a8884",
+      "mtime": 1781464835.096501
+    },
+    "backend\\alembic\\script.py.mako": {
+      "hash": "d38920781b4d31ae1c0a71bc09f41c2ade8feab9e5a087e3f30cb4bbf0c1c9d3",
+      "mtime": 1781464835.1089506
+    },
+    "backend\\alembic\\versions\\36541e3ffc19_add_system_alerts_and_storage_logs.py": {
+      "hash": "a7178988b140b6a3e9a8367eec45f584878fb94c6e2fa8952d17a5348cb85315",
+      "mtime": 1789218620.2754624
+    },
+    "backend\\alembic\\versions\\56e17edfe0eb_initial_schema.py": {
+      "hash": "8405567917eb58308842dc47b13f64950dc0d374241c84ee2b0c27ab432ddab2",
+      "mtime": 1781465691.0145316
+    },
+    "backend\\alembic\\versions\\5c90b75f2972_compliance_and_audit.py": {
+      "hash": "668f2f6d41f04e760d78765f5d11d416783f7540f161811ad166288e57e3a058",
+      "mtime": 1781906371.8447976
+    },
+    "backend\\alembic\\versions\\9a8b7c6d5e4f_reset_and_recreate_schema.py": {
+      "hash": "5017923ad55e237d7861ad69305df4f87419e73c88498b547d044139847e0995",
+      "mtime": 1781546259.137612
+    },
+    "backend\\alembic\\versions\\a1b2c3d4e5f6_notes_text_to_jsonb.py": {
+      "hash": "525babff946872ea2fe5aba2852a866a785e08d89c195b048ef17fb51aff072f",
+      "mtime": 1781542205.8529956
+    },
+    "backend\\alembic\\versions\\a2ab93597200_add_index_to_phone_number.py": {
+      "hash": "414b8064b70fad68ed7692e4b5c5356b76cfdfdf9d14e2248d64f4ef78fd63a0",
+      "mtime": 1781546686.8013484
+    },
+    "backend\\alembic\\versions\\ceb0b0ced4a9_remove_redundant_indexes.py": {
+      "hash": "a16de0f88c5de3de0f9ccc7bca27e340ff5910d2642371f8fc8c5c4db870a06b",
+      "mtime": 1781546866.682979
+    },
+    "backend\\alembic\\versions\\e8870016ae16_drop_otp_store_table.py": {
+      "hash": "c74152c0a8d58b4a46fd64b664a9dca95d8eb44ababab8ec18ba2f31ca8e735a",
+      "mtime": 1789219354.3215537
+    },
+    "backend\\alembic\\versions\\fceaccf2bcff_policy_versioning.py": {
+      "hash": "722c2fc5d9e8d583ca283e9eefa1799e5cc186e85890d2a6f1021a7ce2661530",
+      "mtime": 1781906335.9507473
+    },
+    "backend\\routes\\admin.py": {
+      "hash": "37bb2e12f3f5fa32ded0d1695ababa67839a12f1ffacf836e47cbc351ecad400",
+      "mtime": 1789218773.012251
+    },
+    "backend\\routes\\auth.py": {
+      "hash": "e5da3b76fe388822435e0c9093e1809fe95d8d873904c211fce220ec7e696f39",
+      "mtime": 1789219252.0307817
+    },
+    "backend\\routes\\users.py": {
+      "hash": "14b037c36cfbb8b55ea1730c096cd306be8215853db9550b9b5dfcbc7e755cf4",
+      "mtime": 1783781375.5168176
+    },
+    "frontend\\Dockerfile": {
+      "hash": "135fa78125621b13aca2a75a841118e104ff4a5ed6cdf2e8518ea3fcf5071635",
+      "mtime": 1781477152.4919212
+    },
+    "frontend\\eslint.config.js": {
+      "hash": "bdc96e9bee1d09bfd1f4eddec02b64011f49df4b208412f41e4cc76eb0209e72",
+      "mtime": 1781542516.659242
+    },
+    "frontend\\index.html": {
+      "hash": "9966a5e10af896afb5525159107c7076127922acb272a1594fd64640111bcb03",
+      "mtime": 1782163405.9311707
+    },
+    "frontend\\nginx.conf": {
+      "hash": "854bf2ce01e0f088ae5ee45e51f24a93b106681f9bf84d962d3893f522252859",
+      "mtime": 1781907059.1841383
+    },
+    "frontend\\package.json": {
+      "hash": "b7f6c0c1ecd8783c27d98625d9048355b8709910d19bd0d452f1ea47b952ed60",
+      "mtime": 1789207043.0104923
+    },
+    "frontend\\README.md": {
+      "hash": "a460b4dc7e6392e76aa54d844c9261b8db0adb7f967ba8300526456f1dcf5fb4",
+      "mtime": 1781464830.6752071
+    },
+    "frontend\\vite.config.js": {
+      "hash": "6f22e2944c34c8d884d61982d4c025e194d5165d5958a3c23081833e74347b03",
+      "mtime": 1783782894.6627247
+    },
+    "frontend\\public\\favicon.svg": {
+      "hash": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+      "mtime": 1781464830.754738
+    },
+    "frontend\\public\\icons.svg": {
+      "hash": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a",
+      "mtime": 1781464830.84591
+    },
+    "frontend\\src\\App.css": {
+      "hash": "6e25a776d3e8102da5bacb3cb99f4a5fc662a2e01e6143140671a556d28c3d5c",
+      "mtime": 1781464830.517764
+    },
+    "frontend\\src\\App.jsx": {
+      "hash": "6310964841ee4172fb56ee4b10e717746c50b31c8d1bdd6d068f7ac7137456d0",
+      "mtime": 1789206356.703676
+    },
+    "frontend\\src\\index.css": {
+      "hash": "5865fa692dbfef60d3ae8f65d032cd855bda510766673bcf40d72eb75ab2c7a0",
+      "mtime": 1781464892.1327329
+    },
+    "frontend\\src\\main.jsx": {
+      "hash": "4b4b864dbe45253425d0c925337180ec07e204295179f80f59551216f466f618",
+      "mtime": 1781464830.668451
+    },
+    "frontend\\src\\api\\client.js": {
+      "hash": "9b1da1e1fe5fa6837a2bb27abbba8ce8ab5f30aaad3b7226e6764ee2dff7f287",
+      "mtime": 1783782112.28136
+    },
+    "frontend\\src\\assets\\hero.png": {
+      "hash": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c",
+      "mtime": 1781464830.71057
+    },
+    "frontend\\src\\assets\\react.svg": {
+      "hash": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5",
+      "mtime": 1781464830.8857045
+    },
+    "frontend\\src\\assets\\vite.svg": {
+      "hash": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f",
+      "mtime": 1781464830.9288008
+    },
+    "frontend\\src\\components\\DocumentViewer.jsx": {
+      "hash": "5985a0e95d4356da34c57912d7b1bbc100e86ae630eb4cb5cf9727646a273585",
+      "mtime": 1782213234.696792
+    },
+    "frontend\\src\\pages\\AdminDashboard.jsx": {
+      "hash": "a1c5bdd855fe8d3f93b581dc5d8f3a728bde87a318a3e71766bef6b476e415f4",
+      "mtime": 1789218915.993721
+    },
+    "frontend\\src\\pages\\AdminUserDetail.jsx": {
+      "hash": "3d3e45f864ae34a33d931baa9da29a128a1a9e3724de6eeac4e5cd59b0b21cc0",
+      "mtime": 1783782737.9698908
+    },
+    "frontend\\src\\utils\\policyUtils.js": {
+      "hash": "384d5b9d7ae462fa4146feef4b1b9ac11cec0aa5c0fdb646f6f3e0b2d14ea6c6",
+      "mtime": 1781908416.010549
+    },
+    "frontend\\src\\utils\\validators.js": {
+      "hash": "a9af0d4ea03456ef896b982548eb56f6a5dbc752df8240e82c9f19bdf78638fb",
+      "mtime": 1789214472.693709
+    },
+    "testsprite_tests\\standard_prd.json": {
+      "hash": "acd0063d00723541246a3d581a09c1c6d2614a5124a5efb76834a73b09b149c3",
+      "mtime": 1782076569.964912
+    },
+    "testsprite_tests\\TC001_test_admin_login_with_valid_and_invalid_credentials.py": {
+      "hash": "64e54ade52937d8ff6746cf07b4ae5cafd360159068942a0e403e8efa278719b",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC002_test_admin_logout_clears_session_cookie.py": {
+      "hash": "cab72d27febfcfafd6515d18badf6eb18d208cff928f4c9996f442110f221c6b",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC003_test_check_vehicle_registration_availability.py": {
+      "hash": "ebdd82e41bcbacd4cc8a17c4548f31b20810f822b6c8cacce2d93629d3ea44c1",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC004_test_user_registration_with_valid_and_invalid_data.py": {
+      "hash": "2a3852821596fa4ea2d1224d1e4bd12110cf2f4aaec2fa581039005201a14eb4",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC005_test_admin_search_users_with_and_without_authentication.py": {
+      "hash": "4405203df7f06cede0419b3188a1d2eb9a626cd6a6518c409037a9516f82d990",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC006_test_admin_get_user_detail_and_handle_nonexistent_user.py": {
+      "hash": "1fe847b6bbed99ba76f5c754596abb11a426227b9517a216e3ee2a110659fb94",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC007_test_admin_create_user_profile.py": {
+      "hash": "991dcae7fe3ea4188313d7e7a8feaa5366311d0538fa6bbbb3ddaa0d8a2b8314",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC008_test_admin_upload_new_document_version.py": {
+      "hash": "2b052e9150a4e3d67d7221308eb19ead36dc512a26c4e2bb3647ada6cbd6b0a6",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC009_test_admin_verify_or_reject_document_version.py": {
+      "hash": "8f2c7ff159654d0cd7e964ba7e6789bc2169e8c20ab6ba3a416c92cbe3facae9",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\TC010_test_admin_retention_cleanup_dry_run_and_execute_modes.py": {
+      "hash": "0af5a8b65b70a0b700b79bb4749673ff9ef0be13120998de2202d14c279fb84c",
+      "mtime": 1782158398.9301167
+    },
+    "testsprite_tests\\testsprite_backend_test_plan.json": {
+      "hash": "9dc3ed8bc579825e29609e64055383b8916dc443fd5563af4ef97d2ab896b205",
+      "mtime": 1782076582.1146295
+    },
+    "testsprite_tests\\testsprite_frontend_test_plan.json": {
+      "hash": "676b3ece67ba9ae44906b4c0049aaf6bd94aa14aded0f3b15e233f130e4b94aa",
+      "mtime": 1782158940.904967
+    },
+    "testsprite_tests\\tmp\\code_summary.yaml": {
+      "hash": "85224ac338796be949e8ae3dc7b2934b26cfd60389e021c48add0b0d2cff864a",
+      "mtime": 1782076555.0481527
+    },
+    "testsprite_tests\\tmp\\config.json": {
+      "hash": "917242f9cf8be94e1387526b90036a0c0c5050b98055a2509990c4f178a5b24d",
+      "mtime": 1782159645.9055545
+    },
+    "testsprite_tests\\tmp\\execution.lock": {
+      "hash": "e11fed7eed5ed89710153f9eae1d04ba5f0a9e2fdb0a6527964a1bd482b73a92",
+      "mtime": 1782159267.8145442
+    },
+    "testsprite_tests\\tmp\\mcp.log": {
+      "hash": "87a3d583ef8b1aaca5c2d9c154fb249ed956016814fe44a1032b25d3db3f6493",
+      "mtime": 1782159762.511461
+    },
+    "testsprite_tests\\tmp\\test_results.json": {
+      "hash": "1c51ad8379ccc7fcfd1845e83705a1692b8f92ba8b46d548997fed6d762c4c81",
+      "mtime": 1782158398.9231007
+    },
+    "testsprite_tests\\tmp\\prd_files\\architecture.md": {
+      "hash": "966b9c3d4a93ff0035787282ec2b182572f8c248bbcf00fcb03ba1f14c1a3a5f",
+      "mtime": 1781908879.4424057
+    },
+    "testsprite_tests\\tmp\\prd_files\\pricing.md": {
+      "hash": "c59cd8d3c2b879f058a096ae2aaba0bf182202f5c3d41d0e9f0129112e1fef28",
+      "mtime": 1781906682.344145
+    }
+  }
+}

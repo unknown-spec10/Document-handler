@@ -1,0 +1,30 @@
+# Virtual environments
+myenv/
+venv/
+.venv/
+env/
+
+# Node dependencies and build artifacts
+**/node_modules/
+frontend/node_modules/
+
+# Python cache and bytecode
+**/__pycache__/
+**/*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Git and editor files
+.git/
+.gitignore
+.gemini/
+.vscode/
+.idea/
+
+# Documentation and temporary files
+docs_wiki/
+*.log
+*.tmp
+*.bak
+gemini-code-*.html

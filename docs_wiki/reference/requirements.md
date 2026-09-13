@@ -1,0 +1,16 @@
+fastapi==0.137.0
+uvicorn[standard]==0.49.0
+sqlalchemy==2.0.50
+alembic==1.18.4
+psycopg2-binary==2.9.12
+pydantic[email]==2.13.4
+python-multipart==0.0.32
+python-dotenv==1.2.2
+boto3==1.40.61
+aioboto3==15.5.0
+pyjwt==2.13.0
+asyncpg==0.31.0
+slowapi==0.1.10
+limits==5.8.0
+greenlet==3.5.1
+redis==8.0.0

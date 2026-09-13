@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "test_admin_login_with_valid_and_invalid_credentials",
+    "description": "Verify that POST /auth/admin-login authenticates admin with valid credentials returning 200 and sets access_token cookie, rejects invalid credentials with 401, and returns 500 if admin credentials are not configured."
+  },
+  {
+    "id": "TC002",
+    "title": "test_admin_logout_clears_session_cookie",
+    "description": "Verify that POST /auth/logout clears the admin JWT cookie and returns 200 response."
+  },
+  {
+    "id": "TC003",
+    "title": "test_check_vehicle_registration_availability",
+    "description": "Verify that GET /users/check-vehicle returns 200 with availability status for available and already registered vehicle registration numbers."
+  },
+  {
+    "id": "TC004",
+    "title": "test_user_registration_with_valid_and_invalid_data",
+    "description": "Verify that POST /users/register accepts valid KYC payload with multiple documents and stores them in S3 returning 200, and rejects invalid file types or malformed data with 400 error."
+  },
+  {
+    "id": "TC005",
+    "title": "test_admin_search_users_with_and_without_authentication",
+    "description": "Verify that GET /admin/search returns 200 with paginated user results when called with valid admin cookie, and returns 401 Unauthorized when called without authentication."
+  },
+  {
+    "id": "TC006",
+    "title": "test_admin_get_user_detail_and_handle_nonexistent_user",
+    "description": "Verify that GET /admin/user/{vehicle_reg_no} returns 200 with user details and presigned document links for existing users, and 404 for non-existent vehicle registration numbers."
+  },
+  {
+    "id": "TC007",
+    "title": "test_admin_create_user_profile",
+    "description": "Verify that POST /admin/user/create creates a new user profile with valid admin cookie and required data, returning 200 StatusResponse."
+  },
+  {
+    "id": "TC008",
+    "title": "test_admin_upload_new_document_version",
+    "description": "Verify that POST /admin/user/{vehicle_reg_no}/upload uploads a new document version with valid admin cookie and returns 200, and the new version is available in version history."
+  },
+  {
+    "id": "TC009",
+    "title": "test_admin_verify_or_reject_document_version",
+    "description": "Verify that POST /admin/user/{vehicle_reg_no}/documents/{doc_id}/verify accepts verification decision and reason, returning 200 VerificationResponse confirming approved or rejected status."
+  },
+  {
+    "id": "TC010",
+    "title": "test_admin_retention_cleanup_dry_run_and_execute_modes",
+    "description": "Verify that POST /admin/retention/cleanup with valid admin cookie and dry-run mode returns 200 with documents eligible for purge without deleting, and with execute mode and confirmation header permanently removes expired documents returning 200."
+  }
+]

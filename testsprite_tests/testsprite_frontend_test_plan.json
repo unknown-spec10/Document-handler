@@ -1,0 +1,1054 @@
+[
+  {
+    "id": "TC001",
+    "title": "Public applicant submits a complete KYC registration",
+    "description": "Verifies that a public applicant can submit a full registration with valid identity documents and receive a successful completion state.",
+    "category": "User KYC Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /users/check-vehicle"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a vehicle registration number that is not yet registered"
+      },
+      {
+        "type": "action",
+        "description": "Submit the availability check"
+      },
+      {
+        "type": "action",
+        "description": "Proceed to the registration form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the applicant name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the vehicle registration number field with the same available vehicle registration number"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid PDF or image document for the KYC submission"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the registration completes successfully"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the newly registered profile is created"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Admin signs in and accesses protected search",
+    "description": "Verifies that an administrator can log in and use the protected admin search area successfully.",
+    "category": "Admin Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to the admin search area"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the admin search page is accessible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify search results or an empty state are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Admin signs out of the session",
+    "description": "Verifies that an authenticated administrator can end their session and return to an unauthenticated state.",
+    "category": "Admin Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the sign out control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user is returned to an unauthenticated state"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify protected admin content is no longer accessible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Public applicant checks vehicle availability",
+    "description": "Verifies that a public applicant can confirm a vehicle registration number is available before starting registration.",
+    "category": "User KYC Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /users/check-vehicle"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a vehicle registration number that is not yet registered"
+      },
+      {
+        "type": "action",
+        "description": "Submit the availability check"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the vehicle is shown as available"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page allows the applicant to continue to registration"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Public applicant submits multiple KYC documents",
+    "description": "Verifies that a public applicant can register with more than one valid document and complete the submission successfully.",
+    "category": "User KYC Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /users/check-vehicle"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a vehicle registration number that is not yet registered"
+      },
+      {
+        "type": "action",
+        "description": "Submit the availability check"
+      },
+      {
+        "type": "action",
+        "description": "Proceed to the registration form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the applicant name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the vehicle registration number field with the same available vehicle registration number"
+      },
+      {
+        "type": "action",
+        "description": "Upload multiple valid PDF or image documents for the KYC submission"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the registration completes successfully"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the submitted documents are included in the new profile"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Delete an entire vehicle owner profile",
+    "description": "An admin can delete a vehicle owner profile and the profile no longer appears in the admin console.",
+    "category": "Admin Document Actions",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the admin user profile for a vehicle owner"
+      },
+      {
+        "type": "action",
+        "description": "Delete the entire user profile"
+      },
+      {
+        "type": "action",
+        "description": "Confirm the deletion"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user profile is removed from the admin console"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Public applicant cannot register an unavailable vehicle",
+    "description": "Verifies that a vehicle already marked as registered cannot be submitted again through the public registration flow.",
+    "category": "User KYC Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /users/check-vehicle"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a vehicle registration number that is already registered"
+      },
+      {
+        "type": "action",
+        "description": "Submit the availability check"
+      },
+      {
+        "type": "action",
+        "description": "Proceed to the registration form for the same vehicle"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the applicant name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid document for the KYC submission"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation or duplicate-registration error is shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the registration is not created"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Admin searches registered users with filters and pagination",
+    "description": "Verifies that an authenticated administrator can search for users, change result pages, and narrow the list with search filters.",
+    "category": "Admin User Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the admin search area"
+      },
+      {
+        "type": "action",
+        "description": "Enter a search filter for registered users"
+      },
+      {
+        "type": "action",
+        "description": "Move to the next page of search results"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify filtered search results are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify pagination changes the visible result set"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Upload a new document version for a vehicle owner",
+    "description": "An admin can add a replacement document version to an existing vehicle owner profile and see the new version reflected in history.",
+    "category": "Admin Document Actions",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the admin user profile for a vehicle owner that already has documents"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid new document version for the profile"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new document version appears in the version history"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Admin opens a vehicle owner profile and reviews documents",
+    "description": "Verifies that an authenticated administrator can open a user profile from search results and review the detailed document links.",
+    "category": "Admin User Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the admin search area"
+      },
+      {
+        "type": "action",
+        "description": "Open a vehicle owner profile from the search results"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user detail view is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify document access links are available"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Verify a document version with an approval decision",
+    "description": "An admin can open an existing document version, approve it with a reason, and see the document status updated.",
+    "category": "Admin Document Actions",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the admin user profile for a vehicle owner that already has an unverified document"
+      },
+      {
+        "type": "action",
+        "description": "Open the document verification workflow for an existing document version"
+      },
+      {
+        "type": "action",
+        "description": "Choose an approval decision and provide a verification reason"
+      },
+      {
+        "type": "action",
+        "description": "Submit the verification"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the document is shown as verified"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Admin reviews a user's document history and audit trail",
+    "description": "Verifies that an authenticated administrator can inspect document version history and audit entries for a vehicle owner.",
+    "category": "Admin User Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the admin search area"
+      },
+      {
+        "type": "action",
+        "description": "Open a vehicle owner profile from the search results"
+      },
+      {
+        "type": "action",
+        "description": "Open the document history view for one document type"
+      },
+      {
+        "type": "action",
+        "description": "Open the audit log view"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify document version history is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify audit log entries are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Execute retention cleanup for expired documents",
+    "description": "An admin can run retention cleanup with confirmation and see expired documents removed from the admin view.",
+    "category": "Data Retention & Compliance Cleanup",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the retention cleanup page"
+      },
+      {
+        "type": "action",
+        "description": "Enable execute mode and provide the required confirmation"
+      },
+      {
+        "type": "action",
+        "description": "Run retention cleanup"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify expired documents are removed from the admin view"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Admin creates a new user profile",
+    "description": "Verifies that an authenticated administrator can create a new vehicle owner profile from the admin console.",
+    "category": "Admin User Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the admin user creation area"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required user profile fields with valid values"
+      },
+      {
+        "type": "action",
+        "description": "Submit the user creation form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the profile is created successfully"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new user appears in admin management views"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Reject a document version with a compliance reason",
+    "description": "An admin can reject a document version and see the rejection state reflected in the profile history.",
+    "category": "Admin Document Actions",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the admin user profile for a vehicle owner that already has an unverified document"
+      },
+      {
+        "type": "action",
+        "description": "Open the document verification workflow for an existing document version"
+      },
+      {
+        "type": "action",
+        "description": "Choose a rejection decision and provide a compliance reason"
+      },
+      {
+        "type": "action",
+        "description": "Submit the verification"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the document is shown as rejected"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Admin uploads a new document version and updates history",
+    "description": "Verifies that an authenticated administrator can add a new version of an existing document and see the updated history state.",
+    "category": "Admin User Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the admin search area"
+      },
+      {
+        "type": "action",
+        "description": "Open a vehicle owner profile from the search results"
+      },
+      {
+        "type": "action",
+        "description": "Start the add new document version flow for one document type"
+      },
+      {
+        "type": "action",
+        "description": "Upload a valid replacement document"
+      },
+      {
+        "type": "action",
+        "description": "Submit the document update"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new document version is saved"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the document history reflects the new version"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC017",
+    "title": "Remove a document version and promote the latest remaining version",
+    "description": "An admin can soft-delete a document version and the profile updates to show the next latest active version.",
+    "category": "Admin Document Actions",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to the admin user profile for a vehicle owner that has multiple document versions"
+      },
+      {
+        "type": "action",
+        "description": "Delete one document version from the profile"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the deleted version is no longer active"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the latest remaining version is promoted"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC018",
+    "title": "Estimate costs from custom AWS usage inputs",
+    "description": "A finance or operations admin can enter storage and compute assumptions and receive a cost estimate breakdown.",
+    "category": "Pricing & Cost Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the cost estimate page"
+      },
+      {
+        "type": "action",
+        "description": "Fill in valid S3 usage inputs"
+      },
+      {
+        "type": "action",
+        "description": "Fill in valid RDS usage inputs"
+      },
+      {
+        "type": "action",
+        "description": "Fill in valid EC2 usage inputs"
+      },
+      {
+        "type": "action",
+        "description": "Submit the estimate form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a cost estimate breakdown is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a total estimated cost is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC019",
+    "title": "Admin verifies or rejects a pending document version",
+    "description": "Verifies that an authenticated administrator can change a document version's review state and see the outcome reflected in history.",
+    "category": "Admin User Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the admin search area"
+      },
+      {
+        "type": "action",
+        "description": "Open a vehicle owner profile from the search results"
+      },
+      {
+        "type": "action",
+        "description": "Open the review controls for a document version"
+      },
+      {
+        "type": "action",
+        "description": "Choose to verify or reject the document version"
+      },
+      {
+        "type": "action",
+        "description": "Confirm the review action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the review status is updated"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated status appears in the document history"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC020",
+    "title": "Dry-run retention cleanup to review expired documents",
+    "description": "An admin can run retention cleanup in dry-run mode and see which expired documents would be purged without removing them.",
+    "category": "Data Retention & Compliance Cleanup",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the retention cleanup page"
+      },
+      {
+        "type": "action",
+        "description": "Run retention cleanup in dry-run mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify documents eligible for purge are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the documents remain available after the dry run"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC021",
+    "title": "Admin reviews actual costs and estimates future spend",
+    "description": "Verifies that an authenticated administrator can view month-to-date actual costs and calculate a cost estimate using custom infrastructure inputs.",
+    "category": "Admin User Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the actual costs view"
+      },
+      {
+        "type": "action",
+        "description": "Open the cost estimate view"
+      },
+      {
+        "type": "action",
+        "description": "Fill in valid custom S3, RDS, and EC2 estimate inputs"
+      },
+      {
+        "type": "action",
+        "description": "Run the cost estimate"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify actual cost information is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a cost estimate result is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC022",
+    "title": "Review month-to-date actual AWS costs",
+    "description": "A finance or operations admin can view current actual spend and projected month-end costs for the system.",
+    "category": "Pricing & Cost Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the actual costs page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify actual cost data is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a month-end projection is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC023",
+    "title": "Admin runs retention cleanup in dry-run and execution mode",
+    "description": "Verifies that an authenticated administrator can preview retention cleanup and then execute it with confirmation from the admin console.",
+    "category": "Admin User Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin username field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the admin password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open the retention cleanup area"
+      },
+      {
+        "type": "action",
+        "description": "Run a dry-run cleanup preview"
+      },
+      {
+        "type": "action",
+        "description": "Confirm the execution cleanup action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a dry-run summary is shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cleanup execution result is shown"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC024",
+    "title": "Public applicant is blocked from invalid document types",
+    "description": "Verifies that the registration form rejects unsupported document files and does not complete the submission.",
+    "category": "User KYC Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /users/check-vehicle"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a vehicle registration number that is not yet registered"
+      },
+      {
+        "type": "action",
+        "description": "Submit the availability check"
+      },
+      {
+        "type": "action",
+        "description": "Proceed to the registration form"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the applicant name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Upload an unsupported file type for the KYC submission"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a file validation error is shown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the registration does not complete"
+      }
+    ],
+    "priority": "Medium"
+  }
+]
