@@ -223,6 +223,10 @@ export default function AdminDashboard() {
     }, 2500);
   };
 
+  useEffect(() => {
+    document.title = "Policy Manager – Enterprise Insurance & KYC Repository";
+  }, []);
+
   // Live validator for new user registration number
   useEffect(() => {
     if (!showAddUserModal) return;
@@ -956,8 +960,16 @@ export default function AdminDashboard() {
               className="max-w-5xl mx-auto space-y-6"
             >
               <div>
-                <h1 className={`text-xl font-semibold mb-1 ${isDark ? 'text-white' : 'text-slate-900'}`}>System Overview</h1>
-                <p className="text-xs text-slate-500">Live policy lifecycle and database statistics.</p>
+                <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
+                  <h1 className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>System Overview</h1>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-blue-500/10 text-blue-400 border border-blue-500/25">
+                    <Shield className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                    Enterprise Insurance &amp; KYC Repository
+                  </span>
+                </div>
+                <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  Centralized policy vault, KYC document verification, and automated compliance lifecycle monitoring.
+                </p>
               </div>
 
               {statsLoading ? (

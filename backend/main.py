@@ -167,7 +167,7 @@ async def shutdown_event():
 
 @app.get("/api/health", tags=["health"])
 async def health_check():
-    return {"status": "healthy", "service": "document-management-system-api", "version": "1.0.5"}
+    return {"status": "healthy", "service": "document-management-system-api", "version": "1.0.6"}
 
 # Static Frontend SPA Serving (No Nginx required)
 import os
@@ -180,6 +180,25 @@ if os.path.exists(FRONTEND_DIST):
     assets_dir = os.path.join(FRONTEND_DIST, "assets")
     if os.path.exists(assets_dir):
         app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
+    @app.get("/favicon.ico", include_in_schema=False)
+    async def favicon_ico():
+        ico = os.path.join(FRONTEND_DIST, "favicon.ico")
+        if os.path.exists(ico):
+            return FileResponse(ico, media_type="image/x-icon")
+        svg = os.path.join(FRONTEND_DIST, "favicon.svg")
+        if os.path.exists(svg):
+            return FileResponse(svg, media_type="image/svg+xml")
+        from fastapi.responses import Response
+        return Response(status_code=204)
+
+    @app.get("/favicon.svg", include_in_schema=False)
+    async def favicon_svg():
+        svg = os.path.join(FRONTEND_DIST, "favicon.svg")
+        if os.path.exists(svg):
+            return FileResponse(svg, media_type="image/svg+xml")
+        from fastapi.responses import Response
+        return Response(status_code=204)
 
     @app.get("/{full_path:path}")
     async def serve_spa(full_path: str):
